@@ -1,1 +1,1 @@
-# netflix-react-app
+# Netflix-React-App
