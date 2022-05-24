@@ -1,6 +1,6 @@
 # Netflix React App
 
-## [Link](https://netflix-react-app-green.vercel.app/) to Deployed Application
+[Link](https://netflix-react-app-green.vercel.app/) to Deployed Application
 
 # Description
 This is a Netflix remake
