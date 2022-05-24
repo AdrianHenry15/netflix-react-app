@@ -1,2 +1,2 @@
 # Tools used
-Tailwind CSS, Firebase
+Tailwind CSS, Firebase, React
