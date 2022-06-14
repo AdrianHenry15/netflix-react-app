@@ -3,16 +3,20 @@ import React, { useEffect, useState } from 'react';
 import requests from '../Requests';
 
 const Main = () => {
+
     // get movies from api
-    const [movies, setMovies] = useState([])
+    const [movies, setMovies] = useState([]);
+
     // randomly choose which movie to get data from
-    const movie = movies[Math.floor(Math.random() * movies.length)]
+    const movie = movies[Math.floor(Math.random() * movies.length)];
+
     // get data for movies from api
     useEffect(() => {
         axios.get(requests.requestPopular).then((response) => {
             setMovies(response.data.results)
         })
-    },[])
+    }, []);
+
     // console.log(movie)
 
     // no full paragraph, includes elipsis 
@@ -30,7 +34,7 @@ const Main = () => {
         <img 
             className='w-full h-full object-cover' 
             src={`https://image.tmdb.org/t/p/original/${movie?.backdrop_path}`} 
-            alt="{movie?.title}" 
+            alt={movie?.title}
         />
         <div className='absolute w-full top-[20%] p-4 md:p-8'>
                 <h1 className='text-3x1 md:text-5xl'>{movie?.title}</h1>
@@ -42,8 +46,12 @@ const Main = () => {
                     Watch Later
                 </button>
             </div>
-            <p className='text-gray-400 text-sm' >Released: {movie?.release_date}</p>
-            <p className='w-full md:max-w-[70%] lg:max-w-[50%] xl:max-w-[35%] text-gray-200'>{truncateString(movie?.overview, 150)}</p>
+            <p className='text-gray-400 text-sm' >
+                Released: {movie?.release_date}
+            </p>
+            <p className='w-full md:max-w-[70%] lg:max-w-[50%] xl:max-w-[35%] text-gray-200'>
+                {truncateString(movie?.overview, 150)}
+            </p>
         </div>
     </div>
 </div>
